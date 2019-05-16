@@ -4,7 +4,7 @@ $ErrorActionPreference = 'Stop'
 $mirror = "http://mirror.vcu.edu/pub/windows/cygwin/"
 $LocalDir = "$env:APPDATA\cygwin"
 $InstallDir = "$env:SystemDrive\cygwin64"
-$Packages = "bsdtar,make,openssh,curl,wget,svn,zip,unzip,vim"
+$Packages = "bsdtar,make,openssh,curl,wget,svn,zip,unzip,vim,screen"
 
 # Create C:\Temp if it doesnt already exist
 $TempDir = "$env:SystemDrive\Temp"
@@ -16,6 +16,7 @@ if (!(Test-Path -Path $TempDir )) {
 Write-Host "==> Downloading Cygwin Setup Utility"
 $CygwinURL = "https://cygwin.com/setup-x86_64.exe"
 $CygwinSetup = "$TempDir/setup-x86_64.exe"
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-WebRequest -Uri "$CygwinURL" -OutFile "$CygwinSetup"
 
 # Install Cygwin
