@@ -4,7 +4,7 @@ $ErrorActionPreference = 'Stop'
 $mirror = "http://mirror.vcu.edu/pub/windows/cygwin/"
 $LocalDir = "$env:APPDATA\cygwin"
 $InstallDir = "$env:SystemDrive\cygwin64"
-$Packages = "bsdtar,make,openssh,curl,wget,svn,zip,unzip,vim,screen"
+$Packages = "bsdtar,make,openssh,curl,wget,svn,zip,unzip,vim,screen,python3"
 
 # Create C:\Temp if it doesnt already exist
 $TempDir = "$env:SystemDrive\Temp"
@@ -34,7 +34,7 @@ Start-Process -FilePath "$CygwinSetup" -ArgumentList `
     "--root", "$InstallDir", `
     "--categories", "Base", `
     "--packages", "$Packages" `
-    -Wait 
+    -Wait
 
 # Cleanup Installation files
 Write-Host "==> Cleaning Up Installation files"
