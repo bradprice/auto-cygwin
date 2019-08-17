@@ -4,7 +4,7 @@ $ErrorActionPreference = 'Stop'
 $mirror = "http://mirror.vcu.edu/pub/windows/cygwin/"
 $LocalDir = "$env:APPDATA\cygwin"
 $InstallDir = "$env:SystemDrive\cygwin64"
-$Packages = "bsdtar,make,openssh,curl,wget,svn,zip,unzip,vim,screen,python3"
+$Packages = "bsdtar,make,openssh,curl,wget,svn,zip,unzip,vim,screen,python3,zsh"
 
 # Create C:\Temp if it doesnt already exist
 $TempDir = "$env:SystemDrive\Temp"
