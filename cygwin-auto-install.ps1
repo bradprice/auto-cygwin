@@ -4,7 +4,7 @@ $ErrorActionPreference = 'Stop'
 $mirror = "http://mirror.vcu.edu/pub/windows/cygwin/"
 $LocalDir = "$env:APPDATA\cygwin"
 $InstallDir = "$env:SystemDrive\cygwin64"
-$Packages = "bsdtar,make,openssh,curl,wget,svn,zip,unzip,vim,screen,python3,zsh"
+$Packages = "bsdtar,make,openssh,curl,wget,svn,zip,unzip,vim,screen,python3,zsh,perl,cpio"
 
 # Create C:\Temp if it doesnt already exist
 $TempDir = "$env:SystemDrive\Temp"
@@ -42,5 +42,3 @@ Remove-Item -Path "$CygwinSetup" -Force
 
 # Installation Complete
 Write-Host "==> Installation Complete!"
-
-#$key = & 'gpg' --decrypt "secret.gpg" --quiet --no-verbose >$null 2>&1
